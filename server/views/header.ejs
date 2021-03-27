@@ -3,7 +3,22 @@
 
 <head>
     <style>
+<<<<<<< HEAD
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            position: -webkit-sticky;
+            /* Safari */
+            position: sticky;
+            top: 0;
+        }
+
+=======
        
+>>>>>>> ea1a9da666cdf2ec72b304ea0eb986b6eb2db3ec
         * {
             box-sizing: border-box;
         }
@@ -96,17 +111,21 @@
     <script src="/javascripts/header.js"></script>
 
     <!--Navigation bar-->
-    <div class="topnav">
-        <a class="active" href="#home">Home</a>
-        <a href="#Link">Link</a>
-        <a href="#contact">Message</a>
-        <a href="#about">About</a>
+    <ul>
+        <div class="topnav">
+            <a class="active" href="#home">Home</a>
+            <a href="#Link">Link</a>
+            <a href="#contact">Message</a>
+            <a href="#about">About</a>
+            <li: style="float:right"><a href="#login">Login</a></li:>
+        </div>
+    </ul>
+    <h1>
         <div class="search-container">
             <form action="/action_page.php">
                 <input type="text" placeholder="Search.." name="search">
                 <button type="submit">Submit</button>
             </form>
         </div>
-    </div>
-
+    </h1>
     <!-- Code from other files below -->

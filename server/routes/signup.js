@@ -68,7 +68,7 @@ router.post('/', (req, res) => {
                 messageClass: 'alert-success'
             });
         }
-    })
+    });
 
 });
 

@@ -1,0 +1,13 @@
+<%- include('header'); -%>
+        <div class="container">
+            <% rows.forEach(row => { %>
+                <div class="card">
+                    <h5 class="card-title"><%= row.recipe %> </h5>
+                    <p class="card-text"><%= row.description %></p>
+                    <p class="card-text"><small class="text-muted"><%= row.username %> </small></p>
+                    <a class="btn btn-primary" href="/cook/session/<%= row.rid %>">Go</a>
+                </div>
+            <% }); %> 
+        </div>
+    </body>
+</html>

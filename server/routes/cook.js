@@ -39,13 +39,52 @@ router.post('/start', (req, res) => {
         if (err) {
             return console.error(err.message);
         }
-        res.redirect(`/cook/session?rid=${row.rid}`);
+        res.redirect(`/cook/session/${row.rid}`);
     });
 });
 
-router.get('/session', (req, res, next) => {
-    var rid = req.
-})
+router.get('/session/:rid', (req, res, next) => {
+    var rid = parseInt(req.params.rid);
+    
+    db.get(`SELECT * FROM posts WHERE rid = ? AND active = 1`, [rid], (err, row) => {
+        if (err) {
+            return console.error(err.message);
+        }
+        if (row) {
+            res.render('session', {
+                rid: rid,
+                title: 'Session ' + rid,
+                name: row.username,
+                recipe: row.recipe,
+                description: row.description,
+                category: row.category
+            });
+        }
+    });    
+});
+
+router.get('/end/:rid', (req, res) => {
+    var rid = req.params.rid;
+
+    db.run(`UPDATE posts SET active = 0 WHERE rid = ?`, [rid], (err) => {
+        if (err) {
+            return console.error(err.message);
+        }
+        res.redirect('/cook/message');
+    });
+});
+
+router.get('/message', (req, res) => {
+    db.all(`SELECT * FROM posts WHERE active=1`, [], (err, rows) => {
+        if (err) {
+            return console.error(err.message);
+        }
+        res.render('message', {
+            title: 'Message',
+            rows: rows
+        });
+    });
+});
 
 
 

@@ -167,9 +167,11 @@
             <div class="topnav">
                 <li: style="float:left"><a class="active" href="/">Home</a></li:>
                 <li: style="float:left"><a href="/connect">Connect</a></li:>
-                <li: style="float:left"><a href="/message">Message</a></li:>
+                <li: style="float:left"><a href="/cook/message">Message</a></li:>
                 <li: style="float:left"><a href="/about">About</a></li:>
                 <% if(typeof username !='undefined' ) {%>
+                    <li: style="float:right"><a href="/cook/start">Cook</a></li:>
+                    <li: style="float:right"><a href="/profile">Profile</a></li:>
                     <li: style="float:right"><a class="btn-danger" href="/signout">Sign out</a></li:>
                     <li: style="float:right"><a href="/profile">Profile</a></li:>
                 <% } else { %>

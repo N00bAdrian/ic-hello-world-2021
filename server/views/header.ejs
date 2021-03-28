@@ -172,10 +172,20 @@
               <li: style="float:left"><a href="#Link">Connect</a></li:>
               <li: style="float:left"><a href="#contact">Message</a></li:>
               <li: style="float:left"><a href="#about">About</a></li:>
-              <li: style="float:right"><a href="#login">Login</a></li:>
+              <% if(typeof username != 'undefined') {%>
+                <li: style="float:right"><a class="btn-danger" href="/signout">Sign out</a></li:>  
+              <% } else { %>
+                <li: style="float:right"><a class="btn-primary" href="/signup">Sign up</a><a class="btn-border-primary" href="/signin">Sign in</a></li:>
+              <% } %> 
           </div>
       </ul>
     </nav>
+
+   <% if (typeof message != 'undefined') { %>
+        <div class="alert <%= messageClass %> " role="alert">
+            <%= message %>
+        </div>
+    <% } %>  
 
 
     <!-- Search bar for people, add later if have time -->

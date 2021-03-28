@@ -3,7 +3,7 @@ var router = express.Router();
 
 router.get('/', (req, res, next) => {
     if (req.session.username) {
-        res.render('updatepassword', {
+        res.render('changepassword', {
             title: req.session.username,
             name: req.session.username,
             preferences: req.session.preferences
@@ -38,7 +38,7 @@ const getHashedPassword = (password) => {
 }
 
 router.get('/', (req, res, next) => {
-    res.render('updatepassword', {
+    res.render('changepassword', {
         title: 'Change Password'
     });
 });
@@ -55,8 +55,7 @@ router.post('/', (req, res) => {
         var hash = getHashedPassword(oldpassword);
         if (row) {
             if (row.password != hash) {
-                console.log("fail")
-                res.render('updatepassword', {
+                res.render('changepassword', {
                     title: 'Change Password',
                     message: 'Wrong old password',
                     messageClass: 'alert-danger'
@@ -64,7 +63,7 @@ router.post('/', (req, res) => {
             } else {
                 hash = getHashedPassword(password);
                 if (password != password2) {
-                    res.render('updatepassword', {
+                    res.render('changepassword', {
                         title: 'Change Password',
                         message: 'New passwords do not match',
                         messageClass: 'alert-danger'
@@ -83,7 +82,7 @@ router.post('/', (req, res) => {
                                     return console.log(err.message);
                                 }
                             })
-                            res.render('updatepassword', {
+                            res.render('changepassword', {
                                 title: 'Change Password',
                                 message: 'Success!',
                                 messageClass: 'alert-success'

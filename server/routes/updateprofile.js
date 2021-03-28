@@ -3,7 +3,7 @@ var router = express.Router();
 
 router.get('/', (req, res, next) => {
     if (req.session.username) {
-        res.render('updatepreferences', {
+        res.render('updateprofile', {
             title: req.session.username,
             name: req.session.username,
             preferences: req.session.preferences
@@ -32,7 +32,7 @@ db.run(`CREATE TABLE IF NOT EXISTS users(
 )`);
 
 router.get('/', (req, res, next) => {
-    res.render('updatepreferences', {
+    res.render('updateprofile', {
         title: 'Update Profile'
     });
 });
@@ -49,7 +49,7 @@ router.post('/', (req, res) => {
         //console.log(row);
 
         if (preferences == null) {
-            res.render('updatepreferences', {
+            res.render('updateprofile', {
                 title: 'Update Profile',
                 message: 'No prefrence selected',
                 messageClass: 'alert-danger'

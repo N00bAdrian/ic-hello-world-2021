@@ -14,8 +14,8 @@ var signinRouter = require('./routes/signin');
 var signupRouter = require('./routes/signup');
 var profileRouter = require('./routes/profile');
 var singoutRouter = require('./routes/signout');
-var updatepreferencesRouter = require('./routes/updatepreferences');
-var updatepasswordRouter = require('./routes/updatepassword');
+var updateprofileRouter = require('./routes/updateprofile');
+var changepasswordRouter = require('./routes/changepassword');
 var cookRouter = require('./routes/cook');
 
 var app = express();
@@ -54,8 +54,8 @@ app.use('/signin', signinRouter);
 app.use('/signup', signupRouter);
 app.use('/profile', profileRouter);
 app.use('/signout', singoutRouter);
-app.use('/updateprofile', updatepreferencesRouter);
-app.use('/changepassword', updatepasswordRouter);
+app.use('/updateprofile', updateprofileRouter);
+app.use('/changepassword', changepasswordRouter);
 
 app.use('/cook', cookRouter);
 

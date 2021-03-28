@@ -152,14 +152,11 @@
             text-align: center;
             background-color: #eceff1
         }
-        .btn-primary {
+        .btn {
             background-color: transparent;
             color:black;
-            border: 2px solid black;
-            padding: .5rem 1rem;
             cursor: pointer;
-            border-radius: .25rem;
-            position:sticky;
+            border:2px;
         }
     </style>
 </head>
@@ -199,7 +196,7 @@
                     <li: style="float:right"><a href="/profile">Profile</a></li:>
                     <li: style="float:right"><a href="/cook/start">Cook</a></li:>
                 <% } else { %>
-                    <li: style="float:right"><a class="btn-primary" href="/signup">Sign up</a><a
+                    <li: style="float:right"><a class="btn" href="/signup">Sign up</a><a
                     class="btn-border-primary" href="/signin">Sign in</a></li:>
                 <% } %>
             </div>

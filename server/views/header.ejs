@@ -3,219 +3,208 @@
 
 <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-    <style>
-        .fakeimg {
-            height: 200px;
-            background: #aaa;
-        }
+  <style>
+    .fakeimg {
+      height: 200px;
+      background: #aaa;
+    }
 
-        * {
-            box-sizing: border-box;
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        body {
-            background-color: #ffecb3;
-            margin: 0;
-            font-family: Tahoma, Helvetica, sans-serif;
-        }
+    body {
+      background-color: #ffecb3;
+      margin: 0;
+      font-family: Tahoma, Helvetica, sans-serif;
+    }
 
-        .jumbotron-text-center {
-            padding: 20px;
-            background-color: #fffee7;
-            text-align: center;
-        }
+    .jumbotron-text-center {
+      padding: 20px;
+      background-color: #fffee7;
+      text-align: center;
+    }
 
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: #ffecb3;
-            position: -webkit-sticky;
-            /* Safari */
-            position: sticky;
-            top: 0;
-            left: 0;
-            z-index: 10;
-        }
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #ffecb3;
+      position: -webkit-sticky;
+      /* Safari */
+      position: sticky;
+      top: 0;
+      left: 0;
+      z-index: 10;
+    }
 
-        p {
-            font-family: Tahoma, Helvetica, sans-serif;
-        }
+    p {
+      font-family: Tahoma, Helvetica, sans-serif;
+    }
 
-        h1 {
-          font-size: 64px;
-        }
+    h1 {
+      font-size: 64px;
+    }
 
-        h5 {
-            font-size: 20px;
-        }
+    h5 {
+      font-size: 20px;
+    }
 
-        .topnav {
-            overflow: hidden;
-            background-color: #fff59d;
-            border-radius: 10px;
-        }
+    .topnav {
+      overflow: hidden;
+      background-color: #fff59d;
+      border-radius: 10px;
+    }
 
-        .topnav a {
-            float: left;
-            display: block;
-            color: black;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-            border-radius: 10px;
-        }
+    .topnav a {
+      float: left;
+      display: block;
+      color: black;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+      border-radius: 10px;
+    }
 
-        .topnav a:hover {
-            background-color: #fdd835;
-        }
+    .topnav a:hover {
+      background-color: #fdd835;
+    }
 
-        .topnav .active {
-            background-color: #ffc107;
-            color: black;
-            border-radius: 10px;
-        }
+    .topnav .active {
+      background-color: #ffc107;
+      color: black;
+      border-radius: 10px;
+    }
 
-        .topnav .active {
-            color:#d84315;
-            border-radius: 10px;
-        }
+    .topnav .active {
+      color: #d84315;
+      border-radius: 10px;
+    }
 
-        .topnav .search-container {
-            float: right;
-        }
+    .topnav .search-container {
+      float: right;
+    }
 
-        .topnav input[type=text] {
-            padding: 6px;
-            margin-top: 8px;
-            font-size: 17px;
-            border: none;
-        }
+    .topnav input[type=text] {
+      padding: 6px;
+      margin-top: 8px;
+      font-size: 17px;
+      border: none;
+    }
 
-        /* .topnav .search-container button {
-            float: right;
-            padding: 6px;
-            margin-top: 8px;
-            margin-right: 16px;
-            background: #ff7043;
-            font-size: 17px;
-            border: none;
-            cursor: pointer;
-        }
+    @media screen and (max-width: 600px) {
+      .topnav .search-container {
+        float: none;
+      }
 
-        .topnav .search-container button:hover {
-            background: #ff7043;
-        } */
+      .topnav a,
+      .topnav input[type=text],
+      .topnav .search-container button {
+        float: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+      }
 
-        @media screen and (max-width: 600px) {
-            .topnav .search-container {
-                float: none;
-            }
+      .topnav input[type=text] {
+        border: 1px solid #fff59d;
+      }
 
-            .topnav a,
-            .topnav input[type=text],
-            .topnav .search-container button {
-                float: none;
-                display: block;
-                text-align: left;
-                width: 100%;
-                margin: 0;
-                padding: 10px;
-            }
+    }
 
-            .topnav input[type=text] {
-                border: 1px solid #fff59d;
-            }
+    .card {
+      margin: 10px;
+      padding: 20px;
+      background-color: #fffee7;
+    }
 
-        }
+    .container-fluid {
+      background-color: #ffca28;
+    }
 
-        .card {
-          margin: 10px;
-          padding: 20px;
-          background-color: #fffee7;
-        }
+    .friend-img {
+      text-align: center;
+      background-color: #eceff1
+    }
 
-        .container-fluid {
-            background-color: #ffca28;
-        }
-
-        .friend-img {
-            text-align: center;
-            background-color: #eceff1
-        }
-        .btn {
-            background-color: transparent;
-            color:black;
-            border: -2px solid black;
-            padding: .5rem 1rem;
-            cursor: pointer;
-            border-radius: .25rem;
-        }
-    </style>
+    .btn {
+      background-color: transparent;
+      color: black;
+      border: -2px solid black;
+      padding: .5rem 1rem;
+      cursor: pointer;
+      border-radius: .25rem;
+    }
+  </style>
 </head>
 
 
 
 <body>
-    <!-- Include React into webpage -->
-    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <!-- Include React into webpage -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
 
-    <!-- Include header Javascript-->
-    <script src="/javascripts/header.js"></script>
+  <!-- Include header Javascript-->
+  <script src="/javascripts/header.js"></script>
 
-    <!-- Website Title Header -->
-    <div class="jumbotron-text-center" style="margin-bottom:0; font-family: 'Comic Sans MS', Tahoma, Helvetica, sans-serif">
-      <img src="/images/fried-egg (1).png" alt="cook.io logo" width=150px>
-      <br>
-      <h1><b>cook.io</b></h1>
-      <br>
-      <p style="font-size: 18px; ">cook, craft & connect</p>
-      <br>
-    </div>
-    
-    <!--Navigation bar-->
+  <!-- Website Title Header -->
+  <div class="jumbotron-text-center" style="margin-bottom:0; font-family: 'Comic Sans MS', Tahoma, Helvetica, sans-serif">
+    <img src="/images/fried-egg (1).png" alt="cook.io logo" width=150px>
+    <br>
+    <h1><b>cook.io</b></h1>
+    <br>
+    <p style="font-size: 18px; ">cook, craft & connect</p>
+    <br>
+  </div>
 
-    <ul>
-        <nav>
-            <div class="topnav">
-                <li: style="float:left"><a class="active" href="/">Home</a></li:>
-                <li: style="float:left"><a href="/connect">Connect</a></li:>
-                <li: style="float:left"><a href="/cook/message">Message</a></li:>
-                <li: style="float:left"><a href="/about">About</a></li:>
-                <li: style="float:left"><a href="/ourteam">Our Team</a></li:>
-                <% if(typeof username !='undefined' ) {%>
-                    <li: style="float:right"><a class="btn-danger" href="/signout">Sign out</a></li:>
-                    <li: style="float:right"><a href="/updateprofile">Update Profile</a></li:>
-                    <li: style="float:right"><a href="/changepassword">Change Password</a></li:>
-                    <li: style="float:right"><a href="/profile">Profile</a></li:>
-                    <li: style="float:right"><a href="/cook/start">Cook</a></li:>
-                <% } else { %>
-                    <li: style="float:right"><a class="btn" href="/signup">Sign up</a><a
-                    class="btn-border-primary" href="/signin">Sign in</a></li:>
-                <% } %>
-            </div>
-        </nav>   
-    </ul>
-     
+  <!--Navigation bar-->
 
-    <% if (typeof message !='undefined' ) { %>
-        <div class="alert <%= messageClass %> " role="alert">
-            <%= message %>
-        </div>
-    <% } %>
+  <ul>
+    <nav>
+      <div class="topnav">
+        <li: style="float:left"><a class="active" href="/">Home</a></li:>
+        <li: style="float:left"><a href="/connect">Connect</a></li:>
+        <li: style="float:left"><a href="/cook/message">Message</a></li:>
+        <li: style="float:left"><a href="/about">About</a></li:>
+        <li: style="float:left"><a href="/ourteam">Our Team</a></li:>
+        <% if(typeof username !='undefined' ) {%>
+        <li: style="float:right"><a class="btn-danger" href="/signout">Sign out</a></li:>
+        <li: style="float:right"><a href="/updateprofile">Update Profile</a></li:>
+        <li: style="float:right"><a href="/changepassword">Change Password</a></li:>
+        <li: style="float:right"><a href="/profile">Profile</a></li:>
+        <li: style="float:right"><a href="/cook/start">Cook</a></li:>
+        <% } else { %>
+        <<<<<<< HEAD <li: style="float:right"><a class="btn" href="/signup">Sign up</a><a class="btn-border-primary" href="/signin">Sign in</a></li:>
+          =======
+          <li: style="float:right"><a href="/signup">Sign up</a></li:>
+          <li: style="float:right"><a href="/signin">Sign in</a></li:>
+          >>>>>>> 167280cfd5afbbbefaa6e9226528af0d322bbdaa
+          <% } %>
+      </div>
+    </nav>
+  </ul>
 
-            <!-- Search bar for people, add later if have time -->
-            <!-- <h1>
+
+  <% if (typeof message !='undefined' ) { %>
+  <div class="alert <%= messageClass %> " role="alert">
+    <%= message %>
+  </div>
+  <% } %>
+
+  <!-- Search bar for people, add later if have time -->
+  <!-- <h1>
         <div class="search-container">
             <form action="/action_page.php">
                 <input type="text" placeholder="Search" name="search">
@@ -224,4 +213,4 @@
         </div>
     </h1> -->
 
-            <!-- Code from other files below -->
+  <!-- Code from other files below -->

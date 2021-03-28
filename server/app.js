@@ -11,6 +11,7 @@ var signinRouter = require('./routes/signin');
 var signupRouter = require('./routes/signup');
 var profileRouter = require('./routes/profile');
 var singoutRouter = require('./routes/signout');
+var cookRouter = require('./routes/cook');
 
 var app = express();
 
@@ -38,7 +39,7 @@ app.use('/signin', signinRouter);
 app.use('/signup', signupRouter);
 app.use('/profile', profileRouter);
 app.use('/signout', singoutRouter);
-
+app.use('/cook', cookRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

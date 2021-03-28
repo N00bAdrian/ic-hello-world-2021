@@ -39,12 +39,13 @@
             margin: 0;
             padding: 0;
             overflow: hidden;
-            background-color: #fff59d;
+            background-color: #ffecb3;
             position: -webkit-sticky;
             /* Safari */
             position: sticky;
             top: 0;
             left: 0;
+            z-index: 10;
         }
 
         p {
@@ -83,7 +84,7 @@
             border-radius: 10px;
         }
 
-        .topnav a.active {
+        .topnav .active {
             color:#d84315;
             border-radius: 10px;
         }
@@ -174,21 +175,24 @@
     </div>
 
     <!--Navigation bar-->
-    <nav>
-      <ul>
-          <div class="topnav">
-              <li: style="float:left"><a class="active" href="#home">Home</a></li:>
-              <li: style="float:left"><a href="/connect">Connect</a></li:>
-              <li: style="float:left"><a href="#contact">Message</a></li:>
-              <li: style="float:left"><a href="/about">About</a></li:>
-              <% if(typeof username != 'undefined') {%>
-                <li: style="float:right"><a class="btn-danger" href="/signout">Sign out</a></li:>
-              <% } else { %>
-                <li: style="float:right"><a class="btn-warning" href="/signup">Sign up</a><a class="btn-border-primary" href="/signin">Sign in</a></li:>
-              <% } %>
-          </div>
-      </ul>
-    </nav>
+    <ul>
+        <nav>
+            <div class="topnav">
+                <li: style="float:left"><a class="active" href="/">Home</a></li:>
+                <li: style="float:left"><a href="/connect">Connect</a></li:>
+                <li: style="float:left"><a href="/cook/message">Message</a></li:>
+                <li: style="float:left"><a href="/about">About</a></li:>
+                <% if(typeof username !='undefined' ) {%>
+                    <li: style="float:right"><a class="btn-danger" href="/signout">Sign out</a></li:>
+                    <li: style="float:right"><a href="/profile">Profile</a></li:>
+                    <li: style="float:right"><a href="/cook/start">Cook</a></li:>
+                <% } else { %>
+                    <li: style="float:right"><a class="btn-primary" href="/signup">Sign up</a><a
+                    class="btn-border-primary" href="/signin">Sign in</a></li:>
+                <% } %>
+            </div>
+        </nav>   
+    </ul>
 
    <% if (typeof message != 'undefined') { %>
         <div class="alert <%= messageClass %> " role="alert">

@@ -2,26 +2,48 @@
 <html>
 
 <head>
-    <style>
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: #333;
-            position: -webkit-sticky;
-            /* Safari */
-            position: sticky;
-            top: 0;
-        }
+
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+   <style>
+       .fakeimg {
+         height: 200px;
+         background: #aaa;
+       }
+
         * {
             box-sizing: border-box;
         }
 
         body {
+            background-color: #ffca28;
             margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Comic Sans MS', Tahoma, Helvetica, sans-serif;
         }
+
+        .jumbotron-text-center {
+            background-color: ##fff59d;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #ffca28;
+            position: -webkit-sticky;
+            /* Safari */
+            position: sticky;
+            top: 0;
+            left: 0;
+        }
+
 
         .topnav {
             overflow: hidden;
@@ -44,7 +66,7 @@
         }
 
         .topnav a.active {
-            background-color: #2196F3;
+            background-color: #ff7043;
             color: white;
         }
 
@@ -64,14 +86,14 @@
             padding: 6px;
             margin-top: 8px;
             margin-right: 16px;
-            background: #ddd;
+            background: #ff7043;
             font-size: 17px;
             border: none;
             cursor: pointer;
         }
 
         .topnav .search-container button:hover {
-            background: #ccc;
+            background: #ff7043;
         }
 
         @media screen and (max-width: 600px) {
@@ -94,8 +116,17 @@
                 border: 1px solid #ccc;
             }
         }
+
+        .card {
+          margin: 10px;
+          padding: 20px;
+          background-color: #fff;
+        }
+
     </style>
 </head>
+
+
 
 <body>
     <!-- Include React into webpage -->
@@ -105,16 +136,27 @@
     <!-- Include header Javascript-->
     <script src="/javascripts/header.js"></script>
 
+    <!-- Website Title Header -->
+    <div class="jumbotron-text-center" style="margin-bottom:0">
+      <br>
+      <h1>Cook.io</h1>
+      <p>~ Cook, Craft & Connect all on Cook.io ~</p>
+      <br>
+    </div>
+
     <!--Navigation bar-->
-    <ul>
-        <div class="topnav">
-            <li: style="float:left"><a class="active" href="#home">Home</a></li:>
-            <li: style="float:left"><a href="#Link">Link</a></li:>
-            <li: style="float:left"><a href="#contact">Message</a></li:>
-            <li: style="float:left"><a href="#about">About</a></li:>
-            <li: style="float:right"><a href="#login">Login</a></li:>
-        </div>
-    </ul>
+    <nav>
+      <ul>
+          <div class="topnav">
+              <li: style="float:left"><a class="active" href="#home">Home</a></li:>
+              <li: style="float:left"><a href="#Link">Connect</a></li:>
+              <li: style="float:left"><a href="#contact">Message</a></li:>
+              <li: style="float:left"><a href="#about">About</a></li:>
+              <li: style="float:right"><a href="#login">Login</a></li:>
+          </div>
+      </ul>
+    </nav>
+
 
     <!-- Search bar for people, add later if have time -->
     <!-- <h1>

@@ -77,9 +77,7 @@ router.post('/', (req, res) => {
                   return console.error(err.message);
                 }
                 if (row) {
-                    var sess = req.session;
-                    sess.username = name;
-                    sess.preferences = row.preferences.split(',');
+                    req.session.preferences = preferences.split(',');
                     res.redirect('/profile'); 
                 }
             });

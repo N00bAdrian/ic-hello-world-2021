@@ -90,6 +90,12 @@
             border-radius: 10px;
         }
 
+        .topnav .active2 {
+            background-color: #ffc107;
+            color: black;
+            border-radius: 10px;
+        }
+
         .topnav .search-container {
             float: right;
         }
@@ -166,56 +172,52 @@
 
 
 <body>
-    <!-- Include React into webpage -->
-    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <!-- Include header Javascript-->
+  <script src="/javascripts/header.js"></script>
 
-    <!-- Include header Javascript-->
-    <script src="/javascripts/header.js"></script>
+  <!-- Website Title Header -->
+  <div class="jumbotron-text-center" style="margin-bottom:0; font-family: 'Comic Sans MS', Tahoma, Helvetica, sans-serif">
+    <img src="/images/fried-egg (1).png" alt="cook.io logo" width=150px>
+    <br>
+    <h1><b>cook.io</b></h1>
+    <br>
+    <p style="font-size: 18px; ">cook, craft & connect</p>
+    <br>
+  </div>
 
-    <!-- Website Title Header -->
-    <div class="jumbotron-text-center" style="margin-bottom:0; font-family: 'Comic Sans MS', Tahoma, Helvetica, sans-serif">
-      <img src="/images/fried-egg (1).png" alt="cook.io logo" width=150px>
-      <br>
-      <h1><b>cook.io</b></h1>
-      <br>
-      <p style="font-size: 18px; ">cook, craft & connect</p>
-      <br>
-    </div>
-    
-    <!--Navigation bar-->
+  <!--Navigation bar-->
 
-    <ul>
-        <nav>
-            <div class="topnav">
-                <li: style="float:left"><a class="active" href="/">Home</a></li:>
-                <li: style="float:left"><a href="/connect">Connect</a></li:>
-                <li: style="float:left"><a href="/cook/message">Session</a></li:>
-                <li: style="float:left"><a href="/about">About</a></li:>
-                <li: style="float:left"><a href="/ourteam">Our Team</a></li:>
-                <% if(typeof username !='undefined' ) {%>
-                    <li: style="float:right"><a class="btn-danger" href="/signout">Sign out</a></li:>
-                    <li: style="float:right"><a href="/updateprofile">Update Profile</a></li:>
-                    <li: style="float:right"><a href="/changepassword">Change Password</a></li:>
-                    <li: style="float:right"><a href="/profile">Profile</a></li:>
-                    <li: style="float:right"><a href="/cook/start">Cook</a></li:>
-                <% } else { %>
-                    <li: style="float:right"><a class="btn" href="/signup">Sign up</a><a
-                    class="btn-border-primary" href="/signin">Sign in</a></li:>
-                <% } %>
-            </div>
-        </nav>   
-    </ul>
-     
+  <ul>
+    <nav>
+      <div class="topnav">
+        <li: style="float:left"><a class="active" href="/">Home</a></li:>
+        <li: style="float:left"><a href="/connect">Connect</a></li:>
+        <li: style="float:left"><a href="/cook/message">Sessions</a></li:>
+        <li: style="float:left"><a href="/about">About</a></li:>
+        <li: style="float:left"><a href="/ourteam">Our Team</a></li:>
+        <% if(typeof username !='undefined' ) {%>
+        <li: style="float:right"><a class="btn-danger" href="/signout">Sign Out</a></li:>
+        <li: style="float:right"><a href="/updateprofile">Update Profile</a></li:>
+        <li: style="float:right"><a href="/changepassword">Change Password</a></li:>
+        <li: style="float:right"><a href="/profile">Profile</a></li:>
+        <li: style="float:right"><a href="/cook/start">Cook</a></li:>
+        <% } else { %>
+          <li: style="float:right"><a class="active2" href="/signin">Sign In</a></li:>
+          <li: style="float:right"><a href="/signup">Sign Up</a></li:>
+        <% } %>
+      </div>
+    </nav>
+  </ul>
 
-    <% if (typeof message !='undefined' ) { %>
-        <div class="alert <%= messageClass %> " role="alert">
-            <%= message %>
-        </div>
-    <% } %>
 
-            <!-- Search bar for people, add later if have time -->
-            <!-- <h1>
+  <% if (typeof message !='undefined' ) { %>
+  <div class="alert <%= messageClass %> " role="alert">
+    <%= message %>
+  </div>
+  <% } %>
+
+  <!-- Search bar for people, add later if have time -->
+  <!-- <h1>
         <div class="search-container">
             <form action="/action_page.php">
                 <input type="text" placeholder="Search" name="search">
@@ -224,4 +226,4 @@
         </div>
     </h1> -->
 
-            <!-- Code from other files below -->
+  <!-- Code from other files below -->

@@ -28,7 +28,7 @@
 
         .jumbotron-text-center {
             padding: 50px;
-            background-color: #ffecb3;
+            background-color: #fffee7;
             text-align: center;
         }
 
@@ -37,16 +37,22 @@
             margin: 0;
             padding: 0;
             overflow: hidden;
-            background-color: #fff59d;
+            background-color: #ffecb3;
             position: -webkit-sticky;
             /* Safari */
             position: sticky;
             top: 0;
             left: 0;
+            z-index: 10;
         }
 
         p {
             font-family: Tahoma, Helvetica, sans-serif;
+        }
+
+        h1 {
+          font-size: 80px;
+          letter-spacing: 8px;
         }
 
         h5 {
@@ -56,6 +62,7 @@
         .topnav {
             overflow: hidden;
             background-color: #fff59d;
+            border-radius: 10px;
         }
 
         .topnav a {
@@ -66,6 +73,7 @@
             padding: 14px 16px;
             text-decoration: none;
             font-size: 17px;
+            border-radius: 10px;
         }
 
         .topnav a:hover {
@@ -74,6 +82,13 @@
 
         .topnav .active {
             background-color: #ffc107;
+            color: black;
+            border-radius: 10px;
+        }
+
+        .topnav .active {
+            color:#d84315;
+            border-radius: 10px;
         }
 
         .topnav .search-container {
@@ -137,6 +152,15 @@
             text-align: center;
             background-color: #eceff1
         }
+        .btn-primary {
+            background-color: transparent;
+            color:black;
+            border: 2px solid black;
+            padding: .5rem 1rem;
+            cursor: pointer;
+            border-radius: .25rem;
+            position:sticky;
+        }
     </style>
 </head>
 
@@ -152,15 +176,11 @@
 
     <!-- Website Title Header -->
     <div class="jumbotron-text-center" style="margin-bottom:0; font-family: 'Comic Sans MS', Tahoma, Helvetica, sans-serif">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <h1>Cook.io</h1>
-          </div>
-        </div>
-      </div>
+      <img src="/images/fried-egg (1).png" alt="cook.io logo" width=150px>
       <br>
-      <p style="font-size: 12px; ">~ Cook, Craft & Connect all on Cook.io ~</p>
+      <h1><b>cook.io</b></h1>
+      <br>
+      <p style="font-size: 18px; ">cook, craft & connect</p>
       <br>
     </div>
     
@@ -173,6 +193,7 @@
                 <li: style="float:left"><a href="/connect">Connect</a></li:>
                 <li: style="float:left"><a href="/cook/message">Message</a></li:>
                 <li: style="float:left"><a href="/about">About</a></li:>
+                <li: style="float:left"><a href="/ourteam">Our Team</a></li:>
                 <% if(typeof username !='undefined' ) {%>
                     <li: style="float:right"><a class="btn-danger" href="/signout">Sign out</a></li:>
                     <li: style="float:right"><a href="/profile">Profile</a></li:>

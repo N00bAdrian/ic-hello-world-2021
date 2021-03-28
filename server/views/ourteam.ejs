@@ -1,0 +1,79 @@
+<%- include('header'); -%>
+
+    <style>
+        .container-fluid {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            /* this adds the "card" effect */
+            padding: 16px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .container {
+            margin:30px auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 30px;
+            align-items: stretch;
+            margin: 30px;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            /* this adds the "card" effect */
+            padding: 16px;
+            text-align: center;
+            background-color: #f1f1f1;
+            float: none;
+            margin: 30px auto;
+            height: 30rem;
+            border-radius: 10px;
+        }
+    </style>
+
+<div class="container"><div class="container-fluid">
+        <main class="grid">
+            <div class="card">
+                <img src="/images/adrian_edit.jpg" alt="Sample photo" , width="70%">
+                <div class="text">
+                    <h3>Adrian Wong 🍣</h3>
+                    <p></p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="/images/harman_edit.jpg" alt="Sample photo" , width="70%">
+                <div class="text">
+                    <h3>Harman Chang 🍔</h3>
+                    <p></p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="/images/steph_edit.jpg" alt="Sample photo" , width="70%">
+                <div class="text">
+                    <h3>Stephanie Yeung 🍡 </h3>
+                    <p></p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="/images/yanni_edit.jpg" alt="Sample photo" , width="70%">
+                <div class="text">
+                    <h3>Yan To Chau 🍜</h3>
+                    <p></p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="/images/kenton.jpg" alt="Sample photo" , width="70%">
+                <div class="text">
+                    <h3>Kenton Kwok 🍳</h3>
+                </div>
+            </div>
+        </main>
+    </div></div>
+
+    </body>
+
+    <%- include('footer'); -%>
+
+        </html>

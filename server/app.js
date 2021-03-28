@@ -14,6 +14,8 @@ var signinRouter = require('./routes/signin');
 var signupRouter = require('./routes/signup');
 var profileRouter = require('./routes/profile');
 var singoutRouter = require('./routes/signout');
+var updatepreferencesRouter = require('./routes/updatepreferences');
+var updatepasswordRouter = require('./routes/updatepassword');
 
 var app = express();
 
@@ -44,6 +46,8 @@ app.use('/signin', signinRouter);
 app.use('/signup', signupRouter);
 app.use('/profile', profileRouter);
 app.use('/signout', singoutRouter);
+app.use('/updatepreferences', updatepreferencesRouter);
+app.use('/updatepassword', updatepasswordRouter);
 
 
 // catch 404 and forward to error handler

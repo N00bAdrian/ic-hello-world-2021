@@ -173,9 +173,10 @@
               <li: style="float:left"><a href="#contact">Message</a></li:>
               <li: style="float:left"><a href="#about">About</a></li:>
               <% if(typeof username != 'undefined') {%>
+                <li: style="float:right"><a class="btn-secondary" href="/cook/start">Cook</a></li>
                 <li: style="float:right"><a class="btn-danger" href="/signout">Sign out</a></li:>  
               <% } else { %>
-                <li: style="float:right"><a class="btn-primary" href="/signup">Sign up</a><a class="btn-border-primary" href="/signin">Sign in</a></li:>
+                <li: style="float:right"><a class="btn-primary" href="/signup">Sign up</a></li:><li: style="float:right"><a class="btn-border-primary" href="/signin">Sign in</a></li:>
               <% } %> 
           </div>
       </ul>

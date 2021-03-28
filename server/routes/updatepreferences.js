@@ -33,7 +33,7 @@ db.run(`CREATE TABLE IF NOT EXISTS users(
 
 router.get('/', (req, res, next) => {
     res.render('updatepreferences', {
-        title: 'Update Profile'
+        title: 'Update Preferences'
     });
 });
 
@@ -50,7 +50,7 @@ router.post('/', (req, res) => {
 
         if (preferences == null) {
             res.render('updatepreferences', {
-                title: 'Update Profile',
+                title: 'Update Preferences',
                 message: 'No prefrence selected',
                 messageClass: 'alert-danger'
             });

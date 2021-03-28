@@ -79,11 +79,7 @@ router.post('/session/:postid', (req, res) => {
             console.error(err.message);
         }
     });
-    //res.redirect(`/cook/session/${postid}`);
-    io.emit('message', {
-        username: req.session.username,
-        comment: comment
-    });
+    res.redirect(`/cook/session/${postid}`);
 });
 
 router.get('/end/:rid', (req, res) => {

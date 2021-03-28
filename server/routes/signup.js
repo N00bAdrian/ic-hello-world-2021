@@ -31,7 +31,7 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res) => {
-    const {name, password, password2, preferences} = req.body;
+    const { name, password, password2, preferences } = req.body;
 
     //console.log(preferences.toString());
 
@@ -43,35 +43,44 @@ router.post('/', (req, res) => {
         });
     }
 
-    db.get(`SELECT * FROM users WHERE username = ?`, [name], (err, row) => {
-        if (err) {
-            return console.error(err.message);
-        }
+    if (preferences == null) {
+        res.render('signup', {
+            title: 'Sign up',
+            message: 'No prefrence selected',
+            messageClass: 'alert-danger'
+        });
+    } else {
 
-        //console.log(row);
+        db.get(`SELECT * FROM users WHERE username = ?`, [name], (err, row) => {
+            if (err) {
+                return console.error(err.message);
+            }
 
-        if (row) {
-            res.render('signup', {
-                title: 'Sign up',
-                message: 'User already exists',
-                messageClass: 'alert-danger'
-            });
-        } else {
-            //console.log(name, password);
-            var hash = getHashedPassword(password);
-            db.run(`INSERT INTO users(username, password, preferences) VALUES(?, ?, ?)`, [name, hash, preferences.toString()], (err) => {
-                if (err) {
-                    return console.log(err.message);
-                }
-            })
+            //console.log(row);
 
-            res.render('signin', {
-                title: 'Sign in',
-                message: 'Success!',
-                messageClass: 'alert-success'
-            });
-        }
-    });
+            if (row) {
+                res.render('signup', {
+                    title: 'Sign up',
+                    message: 'User already exists',
+                    messageClass: 'alert-danger'
+                });
+            } else {
+                //console.log(name, password);
+                var hash = getHashedPassword(password);
+                db.run(`INSERT INTO users(username, password, preferences) VALUES(?, ?, ?)`, [name, hash, preferences.toString()], (err) => {
+                    if (err) {
+                        return console.log(err.message);
+                    }
+                })
+
+                res.render('signin', {
+                    title: 'Sign in',
+                    message: 'Success!',
+                    messageClass: 'alert-success'
+                });
+            }
+        });
+    }
 
 });
 

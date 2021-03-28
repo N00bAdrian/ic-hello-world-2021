@@ -1,102 +1,127 @@
 <%- include('header'); -%>
 
-<style>
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-  padding: 16px;
-  text-align: center;
-  background-color: #f1f1f1;
-  float: none;
-  margin: 30px auto;
-  height:40rem;
-  border-radius: 10px;
-}
+    <style>
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            /* this adds the "card" effect */
+            padding: 16px;
+            text-align: center;
+            background-color: #f1f1f1;
+            float: none;
+            margin: 30px auto;
+            height: 40rem;
+            border-radius: 10px;
+        }
 
-.container-fluid {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-  padding: 16px;
-  text-align: center;
-  border-radius: 10px;
-}
+        .container-fluid {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            /* this adds the "card" effect */
+            padding: 16px;
+            text-align: center;
+            border-radius: 10px;
+        }
 
-.btn-primary {
-  background-color: transparent;
-  color:black;
-  border: 2px solid black;
-  padding: .5rem 1rem;
-  cursor: pointer;
-  border-radius: .25rem;
-  bottom: 10px;
-}
+        .btn-primary {
+            background-color: transparent;
+            color: black;
+            border: 2px solid black;
+            padding: .5rem 1rem;
+            cursor: pointer;
+            border-radius: .25rem;
+            bottom: 10px;
+        }
 
-.card-body {
-    height:18rem;
-}
-</style>
+        .card-body {
+            height: 18rem;
+        }
 
-<br>
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 30px;
+            align-items: stretch;
+            margin: 30px;
+        }
+    </style>
 
-<div class="container">
+    <br>
 
-    <div class="container-fluid">
-        <h2><b>Connect Suggestions</b></h2>
+    <div class="container">
 
-        <div class="container" style="width: 100%; margin-top: 30px;
+        <div class="container-fluid">
+            <h2><b>Connect Suggestions</b></h2>
+
+            <div class="container" style="width: 100%; margin-top: 30px;
         margin-right: 0;
         margin-bottom: 0;
         margin-left: 0;">
-        <div class="row justify-content-center">
-            <div class="col-md-4">
-            <div class="card">
-                <div class="friend-img">
-                    <img src="/images/boy.png" class="card-img-top" alt="Manuel Rodrigo" width=150px>
+                <div class="grid">
+                    <div class="card">
+                        <div class="friend-img">
+                            <img src="/images/boy.png" class="card-img-top" alt="Manuel Rodrigo" width=150px>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><b>Manuel Rodrigo</b></h5>
+                            <p class="card-text">New Yorker here! I'm doing some quarantine-cooking, so if you
+                                got recipes for a mean New-York pizza (sorry Chicago), hit me up :D</p>
+                        </div>
+                        <a href="#" class="btn-primary">Connect</a>
+                        <a href="#" class="btn-primary">Dismiss</a>
+                    </div>
+                    <div class="card">
+                        <div class="friend-img">
+                            <img src="/images/girl.png" class="card-img-top" alt="Miranda Lottie" width=150px>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><b>Miranda Lottie</b></h5>
+                            <p class="card-text">From my GBBO binging, I've become a somewhat of a star baker
+                                myself!
+                                I'd love to connect with fellow bakers to learn more tips to avoid soggy bottoms :)
+                            </p>
+                        </div>
+                        <a href="#" class="btn-primary">Connect</a>
+                        <a href="#" class="btn-primary">Dismiss</a>
+                    </div>
+                    <div class="card">
+                        <div class="friend-img">
+                            <img src="/images/boy (1).png" class="card-img-top" alt="Joshua Lin" width=150px>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><b>Joshua Lin</b></h5>
+                            <p class="card-text">Growing up in America, I've always wanted to learn more about my
+                                Vietnamese roots through our food.
+                                If you're also passionate about Vietnamese cooking, let's connect!</p>
+                        </div>
+                        <a href="#" class="btn-primary">Connect</a>
+                        <a href="#" class="btn-primary">Dismiss</a>
+                    </div>
+                    <!--<% rows.forEach(row=> { %>
+                        <div class="card">
+                            <div class="friend-img">
+                                <img src="/images/generic_person.png" class="card-img-top" alt="Genetic Person"width=150px>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title"><b>
+                                        <%= row.username %>
+                                    </b></h5>
+                                <p class="card-text">
+                                    Most recent dish: <%= row.recipe %>
+                                        Description: <%= row.description %>
+                                </p>
+                            </div>
+                            <a href="#" class="btn-primary">Connect</a>
+                            <a href="#" class="btn-primary">Dismiss</a>
+                        </div>
+                        <% }); %> -->
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title"><b>Manuel Rodrigo</b></h5>
-                    <p class="card-text">New Yorker here! I'm doing some quarantine-cooking, so if you
-                     got recipes for a mean New-York pizza (sorry Chicago), hit me up :D</p>
-                </div>
-                <a href="#" class="btn-primary">Connect</a>
-                <a href="#" class="btn-primary">Dismiss</a>
-                </div>
-            </div>
-            <div class="col-md-4">
-            <div class="card">
-                <div class="friend-img">
-                <img src="/images/girl.png" class="card-img-top" alt="Miranda Lottie" width=150px>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title"><b>Miranda Lottie</b></h5>
-                  <p class="card-text">From my GBBO binging, I've become a somewhat of a star baker myself!
-                    I'd love to connect with fellow bakers to learn more tips to avoid soggy bottoms :)</p>
-                </div>
-                <a href="#" class="btn-primary">Connect</a>
-                <a href="#" class="btn-primary">Dismiss</a>
-            </div>
-            </div>
-            <div class="col-md-4">
-            <div class="card">
-                <div class="friend-img">
-                <img src="/images/boy (1).png" class="card-img-top" alt="Joshua Lin" width=150px>
-                </div>
-                <div class="card-body">
-                <h5 class="card-title"><b>Joshua Lin</b></h5>
-                <p class="card-text">Growing up in America, I've always wanted to learn more about my Vietnamese roots through our food.
-                If you're also passionate about Vietnamese cooking, let's connect!</p>
-                </div>
-                <a href="#" class="btn-primary">Connect</a>
-                <a href="#" class="btn-primary">Dismiss</a>
-            </div>
             </div>
         </div>
-        </div>
+
     </div>
 
-</div>
 
+    </body>
 
-</body>
+    <%- include('footer'); -%>
 
-<%- include('footer'); -%>
-
-</html>
+        </html>

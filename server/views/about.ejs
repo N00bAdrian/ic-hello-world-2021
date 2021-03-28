@@ -1,0 +1,107 @@
+<%- include('header'); -%>
+
+<br>
+
+<style>
+    .container-fluid {
+        border-radius: 10px;
+        width: 60%;
+    }
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+      padding: 16px;
+      text-align: center;
+      background-color: #f1f1f1;
+      float: none;
+      margin: 30px auto;
+      border-radius: 10px;
+    }
+    .card-body {
+        width:100%;
+    }
+    .btn-primary {
+        background-color: transparent;
+        color:black;
+        border: 2px solid black;
+        padding: .5rem 1rem;
+        cursor: pointer;
+        border-radius: .25rem;
+        position:sticky;
+        margin: 30px auto;
+    }
+    .card-text{
+        margin: 30px auto;
+    }
+</style>
+
+<div class="container">
+
+    <div class="container-fluid">
+        <div class="container"style="width: 100%">
+            <div class="card">
+                <div class="card-body" >
+                    <h5 class="card-title"><b>Connect.</b></h5>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <p class="card-text">Get together with other hungry chefs cooking marvelous dishes. With easy navigation and search, you can always find the right cook-mate to cook with you!</p>
+                        </div>
+                        <div class="col-md-4">
+                            <img src="/images/friends.png" width="100%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><b>Inspire.</b></h5>
+                    <div class="row justify-content-center">
+                        <div class="col-md-4">
+                            <img src="/images/conversation.png" class="card-img-left" width="100%">
+                        </div>
+                        <div class="col-md-6">
+                            <p class="card-text">Have a discussion with your cook-mates, via chat or a live call. With cook.io across your mobile devices, you are always inspired! </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <h5 class="card-title"><b>Cook!</b></h5>
+                <div class="card-body">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <p class="card-text">It's time to cook! Grab your wok and start stir frying your noodles! And while you're at it, hop on cook.io and call your cook-mates. There's always something insightful going on  in your frying (flying) pans!</p>
+                        </div>
+                        <div class="col-md-4">
+                            <img src="/images/cooking.png" class="card-img-left" width="100%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <h5 class="card-title"><b>Are you hungry?</b></h5>
+                <div class="card-body">
+                    <div class="row justify-content-center">
+                        <div class="col-md-5">
+                            <img src="/images/drooling.png" class="card-img-left" width="100%">
+                        </div>
+                        <div class="col-md-5">
+                            <p class="card-text">Let's get you started and you will be yum yum yum in minutes!</p>
+                            <% if(typeof username != 'undefined') {%>
+                                <p class="card-text">You're already logged in.</p>
+                            <% } else { %>
+                                <a class="btn-primary" href="/signup">Sign up</a>
+                                <a class="btn-primary" href="/signin">Sign in</a>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </div>
+
+</div>
+</body>
+
+<%- include('footer'); -%>
+
+</html>

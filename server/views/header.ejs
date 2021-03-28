@@ -30,7 +30,7 @@
 
         .jumbotron-text-center {
             padding: 50px;
-            background-color: $yellow-200;
+            background-color: #fffee7;
             text-align: center;
         }
 
@@ -39,16 +39,22 @@
             margin: 0;
             padding: 0;
             overflow: hidden;
-            background-color: #fff59d;
+            background-color: #ffecb3;
             position: -webkit-sticky;
             /* Safari */
             position: sticky;
             top: 0;
             left: 0;
+            z-index: 10;
         }
 
         p {
           font-family: Tahoma, Helvetica, sans-serif;
+        }
+
+        h1 {
+          font-size: 80px;
+          letter-spacing: 8px;
         }
 
         h5 {
@@ -58,6 +64,7 @@
         .topnav {
             overflow: hidden;
             background-color: #fff59d;
+            border-radius: 10px;
         }
 
         .topnav a {
@@ -68,16 +75,18 @@
             padding: 14px 16px;
             text-decoration: none;
             font-size: 17px;
+            border-radius: 10px;
         }
 
         .topnav a:hover {
             background-color: #fdd835;
             color: black;
+            border-radius: 10px;
         }
 
-        .topnav a.active {
-            background-color: #ffc107;
-            color: white;
+        .topnav .active {
+            color:#d84315;
+            border-radius: 10px;
         }
 
         .topnav .search-container {
@@ -157,25 +166,40 @@
 
     <!-- Website Title Header -->
     <div class="jumbotron-text-center" style="margin-bottom:0; font-family: 'Comic Sans MS', Tahoma, Helvetica, sans-serif">
-
-      <h1>Cook.io</h1>
+      <img src="/images/fried-egg (1).png" alt="cook.io logo" width=150px>
       <br>
-      <p style="font-size: 12px; ">~ Cook, Craft & Connect all on Cook.io ~</p>
+      <h1><b>cook.io</b></h1>
+      <br>
+      <p style="font-size: 18px; ">cook, craft & connect</p>
       <br>
     </div>
 
     <!--Navigation bar-->
-    <nav>
-      <ul>
-          <div class="topnav">
-              <li: style="float:left"><a class="active" href="#home">Home</a></li:>
-              <li: style="float:left"><a href="#Link">Connect</a></li:>
-              <li: style="float:left"><a href="#contact">Message</a></li:>
-              <li: style="float:left"><a href="#about">About</a></li:>
-              <li: style="float:right"><a href="#login">Login</a></li:>
-          </div>
-      </ul>
-    </nav>
+    <ul>
+        <nav>
+            <div class="topnav">
+                <li: style="float:left"><a class="active" href="/">Home</a></li:>
+                <li: style="float:left"><a href="/connect">Connect</a></li:>
+                <li: style="float:left"><a href="/cook/message">Message</a></li:>
+                <li: style="float:left"><a href="/about">About</a></li:>
+                <li: style="float:left"><a href="/ourteam">Our Team</a></li:>
+                <% if(typeof username !='undefined' ) {%>
+                    <li: style="float:right"><a class="btn-danger" href="/signout">Sign out</a></li:>
+                    <li: style="float:right"><a href="/profile">Profile</a></li:>
+                    <li: style="float:right"><a href="/cook/start">Cook</a></li:>
+                <% } else { %>
+                    <li: style="float:right"><a class="btn-primary" href="/signup">Sign up</a><a
+                    class="btn-border-primary" href="/signin">Sign in</a></li:>
+                <% } %>
+            </div>
+        </nav>   
+    </ul>
+
+   <% if (typeof message != 'undefined') { %>
+        <div class="alert <%= messageClass %> " role="alert">
+            <%= message %>
+        </div>
+    <% } %>
 
 
     <!-- Search bar for people, add later if have time -->

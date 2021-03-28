@@ -1,0 +1,27 @@
+<%- include('header') -%>
+        <div class="container">
+            <div class="card border-primary shadow">
+                <div class="card-header">User profile</div>
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img style="max-height: 300px;" src="/images/cook.jpg">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= username %></h5>
+                            <p class="card-text">
+                                Preferences:
+                                <ul>
+                                    <% for(var i=0; i<preferences.length; i++) { %>
+                                        <li><%= preferences[i] %> </li>
+                                    <% } %>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+          
+    </body>
+</html>

@@ -1,5 +1,7 @@
+const cookieParser = require('cookie-parser');
 var express = require('express');
 var router = express.Router();
+// var {app, io} = require('../app');
 
 const sqlite3 = require('sqlite3').verbose();
 
@@ -77,7 +79,11 @@ router.post('/session/:postid', (req, res) => {
             console.error(err.message);
         }
     });
-    res.redirect(`/cook/session/${postid}`);
+    //res.redirect(`/cook/session/${postid}`);
+    io.emit('message', {
+        username: req.session.username,
+        comment: comment
+    });
 });
 
 router.get('/end/:rid', (req, res) => {
@@ -92,14 +98,26 @@ router.get('/end/:rid', (req, res) => {
 });
 
 router.get('/message', (req, res) => {
-    db.all(`SELECT * FROM posts WHERE active=1`, [], (err, rows) => {
+    db.all(`SELECT * FROM posts WHERE active=1 AND (username = ? OR category IN (`+ req.session.preferences.map(() => '?').join(',') +`))`, [req.session.username].concat(req.session.preferences), (err, rows) => {
         if (err) {
             return console.error(err.message);
         }
-        res.render('message', {
-            title: 'Message',
-            rows: rows
-        });
+        if (rows) {
+            res.render('message', {
+                title: 'Message',
+                rows: rows
+            });
+        } else {
+            db.all(`SELECT * FROM posts WHERE active=1`, [], (err, rows) => {
+                if (err) {
+                    return console.error(err.message);
+                }
+                res.render('message', {
+                    title: 'Message',
+                    rows: rows
+                });
+            });
+        }        
     });
 });
 

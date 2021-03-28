@@ -18,6 +18,16 @@
     }
     .card-body {
         width:100%;
+        margin:10px auto;
+    }
+    .btn-primary {
+        background-color: transparent;
+        color:black;
+        border: 2px solid black;
+        padding: .5rem 1rem;
+        cursor: pointer;
+        border-radius: .25rem;
+        bottom: 10px;
     }
 </style>
 
@@ -32,8 +42,8 @@
                         <div class="col-md-6">
                             <p class="card-text">Get together with hungry people who are cooking similar dishes. With easy navigation and search, you can always find the right cook-mate to cook with you!</p>
                         </div>
-                        <div class="col-md-4">
-                            <img src="/images/friends.png" width="100%">
+                        <div class="col-md-4" style="float:right">
+                            <img src="/images/friends.png" width="100%"  float="right">
                         </div>
                     </div>
                 </div>
@@ -42,7 +52,7 @@
                 <div class="card-body">
                     <h5 class="card-title"><b>Inspire.</b></h5>
                     <div class="row justify-content-center">
-                        <div class="col-md-4">
+                        <div class="col-md-4" style="float:left">
                             <img src="/images/inspire.png" class="card-img-left" width="100%">
                         </div>  
                         <div class="col-md-6">
@@ -58,7 +68,7 @@
                         <div class="col-md-6">
                             <p class="card-text">It's time to cook! Grab your wok and start stir frying your noodles! And while you're at it, hop on cook.io and call your cook-mates. There's always something insightful going on  in your frying (flying) pans!</p>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4" style="float:right">
                             <img src="/images/cook.png" class="card-img-left" width="100%">
                         </div>                  
                     </div>  
@@ -68,11 +78,17 @@
                 <h5 class="card-title"><b>Are you hungry?</b></h5>
                 <div class="card-body">
                     <div class="row justify-content-center">
-                        <div class="col-md-5">
+                        <div class="col-md-5" style="float:left">
                             <img src="/images/cook.png" class="card-img-left" width="100%">
                         </div>                  
                         <div class="col-md-5">
                             <p class="card-text">Let's get you started and you will be yum yum yum in minutes!</p>
+                            <% if(typeof username != 'undefined') {%>
+                                <p>You're already logged in!</p>
+                            <% } else { %>
+                                <a class="btn-primary" href="/signup">Sign up</a>
+                                <a class="btn-primary" href="/signin">Sign in</a>
+                            <% } %> 
                         </div>
                     </div>    
                 </div>

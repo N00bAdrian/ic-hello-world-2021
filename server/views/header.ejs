@@ -70,12 +70,10 @@
 
         .topnav a:hover {
             background-color: #fdd835;
-            color: black;
         }
 
-        .topnav a.active {
+        .topnav .active {
             background-color: #ffc107;
-            color: black;
         }
 
         .topnav .search-container {
@@ -172,6 +170,7 @@
                 <li: style="float:left"><a href="/message">Message</a></li:>
                 <li: style="float:left"><a href="/about">About</a></li:>
                 <% if(typeof username !='undefined' ) {%>
+                    <li: style="float:right"><a href="/profile">Profile</a></li:>
                     <li: style="float:right"><a class="btn-danger" href="/signout">Sign out</a></li:>
                 <% } else { %>
                     <li: style="float:right"><a class="btn-primary" href="/signup">Sign up</a><a

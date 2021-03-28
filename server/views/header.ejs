@@ -27,7 +27,7 @@
         }
 
         .jumbotron-text-center {
-            padding: 20px;
+            padding: 50px;
             background-color: #fffee7;
             text-align: center;
         }
@@ -51,7 +51,8 @@
         }
 
         h1 {
-          font-size: 64px;
+          font-size: 80px;
+          letter-spacing: 8px;
         }
 
         h5 {
@@ -129,13 +130,12 @@
                 text-align: left;
                 width: 100%;
                 margin: 0;
-                padding: 10px;
+                padding: 14px;
             }
 
             .topnav input[type=text] {
                 border: 1px solid #fff59d;
             }
-
         }
 
         .card {
@@ -152,13 +152,14 @@
             text-align: center;
             background-color: #eceff1
         }
-        .btn {
+        .btn-primary {
             background-color: transparent;
             color:black;
-            border: -2px solid black;
+            border: 2px solid black;
             padding: .5rem 1rem;
             cursor: pointer;
             border-radius: .25rem;
+            position:sticky;
         }
     </style>
 </head>
@@ -198,7 +199,7 @@
                     <li: style="float:right"><a href="/profile">Profile</a></li:>
                     <li: style="float:right"><a href="/cook/start">Cook</a></li:>
                 <% } else { %>
-                    <li: style="float:right"><a class="btn" href="/signup">Sign up</a><a
+                    <li: style="float:right"><a class="btn-primary" href="/signup">Sign up</a><a
                     class="btn-border-primary" href="/signin">Sign in</a></li:>
                 <% } %>
             </div>

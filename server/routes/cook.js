@@ -101,7 +101,7 @@ router.get('/message', (req, res) => {
             messageClass: 'alert-danger'
         });
     }
-    db.all(`SELECT * FROM posts WHERE active=1 AND (username = ? OR category IN (`+ req.session.preferences.map(() => '?').join(',') +`))`, [req.session.username].concat(req.session.preferences), (err, rows) => {
+    /*db.all(`SELECT * FROM posts WHERE active=1 AND (username = ? OR category IN (`+ req.session.preferences.map(() => '?').join(',') +`))`, [req.session.username].concat(req.session.preferences), (err, rows) => {
         if (err) {
             return console.error(err.message);
         }
@@ -121,6 +121,19 @@ router.get('/message', (req, res) => {
                 });
             });
         }        
+    });*/
+
+    db.all(`SELECT *, CASE
+    WHEN CATEGORY IN (` + req.session.preferences.map(() => '?').join(',') +`) THEN 1
+    ELSE 0
+    END priority FROM posts ORDER BY priority DESC, rid DESC`, req.session.preferences, (err, rows) => {
+        if (err) {
+            return console.error(err.message);
+        }
+        res.render('message', {
+            title: 'Sessions',
+            rows: rows
+        });
     });
 });
 

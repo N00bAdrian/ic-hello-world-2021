@@ -3,13 +3,17 @@ var router = express.Router();
 
 router.get('/', (req, res, next) => {
     if (req.session.username) {
-        res.render('updatepreferences', {
+        res.render('updateprofile', {
             title: req.session.username,
             name: req.session.username,
             preferences: req.session.preferences
         });
     } else {
-        res.redirect('/signin');
+        res.render('signin', {
+            title: 'Sign in',
+            message: 'Log in required',
+            messageClass: 'alert-danger'
+        });
     }
 });
 
@@ -32,7 +36,7 @@ db.run(`CREATE TABLE IF NOT EXISTS users(
 )`);
 
 router.get('/', (req, res, next) => {
-    res.render('updatepreferences', {
+    res.render('updateprofile', {
         title: 'Update Profile'
     });
 });
@@ -49,7 +53,7 @@ router.post('/', (req, res) => {
         //console.log(row);
 
         if (preferences == null) {
-            res.render('updatepreferences', {
+            res.render('updateprofile', {
                 title: 'Update Profile',
                 message: 'No prefrence selected',
                 messageClass: 'alert-danger'
@@ -77,9 +81,7 @@ router.post('/', (req, res) => {
                   return console.error(err.message);
                 }
                 if (row) {
-                    var sess = req.session;
-                    sess.username = name;
-                    sess.preferences = row.preferences.split(',');
+                    req.session.preferences = preferences.split(',');
                     res.redirect('/profile'); 
                 }
             });

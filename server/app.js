@@ -54,8 +54,8 @@ app.use('/signin', signinRouter);
 app.use('/signup', signupRouter);
 app.use('/profile', profileRouter);
 app.use('/signout', singoutRouter);
-app.use('/updatepreferences', updatepreferencesRouter);
-app.use('/updatepassword', updatepasswordRouter);
+app.use('/updateprofile', updatepreferencesRouter);
+app.use('/changepassword', updatepasswordRouter);
 
 app.use('/cook', cookRouter);
 

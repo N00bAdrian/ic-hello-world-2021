@@ -126,7 +126,7 @@ router.get('/message', (req, res) => {
     db.all(`SELECT *, CASE
     WHEN CATEGORY IN (` + req.session.preferences.map(() => '?').join(',') +`) THEN 1
     ELSE 0
-    END priority FROM posts ORDER BY priority DESC`, req.session.preferences, (err, rows) => {
+    END priority FROM posts ORDER BY priority DESC, rid DESC`, req.session.preferences, (err, rows) => {
         if (err) {
             return console.error(err.message);
         }

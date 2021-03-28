@@ -10,12 +10,12 @@ var db = new sqlite3.Database('../database.db', (err) => {
 
 router.get('/', (req, res, next) => {
     if (req.session.username) {
-        db.get(`SELECT * FROM posts WHERE username = ? ORDER BY rid DESC`, [req.session.username], (err, row) => {
+        db.all(`SELECT * FROM posts WHERE username = ?`, [req.session.username], (err, rows) => {
             res.render('profile', {
-                title: row.username,
-                name: row.username,
-                preferences: row.preferences,
-                row: row
+                title: req.session.username,
+                name: req.session.username,
+                preferences: req.session.preferences,
+                rows: rows
             });            
         });
     } else {

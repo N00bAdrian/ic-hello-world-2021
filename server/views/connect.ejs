@@ -18,6 +18,20 @@
   text-align: center;
   border-radius: 10px;
 }
+
+.btn-primary {
+  background-color: transparent;
+  color:black;
+  border: 2px solid black;
+  padding: .5rem 1rem;
+  cursor: pointer;
+  border-radius: .25rem;
+  bottom: 10px;
+}
+
+.card-body {
+    height:18rem;
+}
 </style>
 
 <br>
@@ -34,17 +48,17 @@
         <div class="row justify-content-center">
             <div class="col-md-4">
             <div class="card">
-                <div class="friend-img" style="margin-top:12px; margin-bottom:20px">
-                <img src="/images/boy.png" class="card-img-top" alt="Manuel Rodrigo" width=150px>
+                <div class="friend-img">
+                    <img src="/images/boy.png" class="card-img-top" alt="Manuel Rodrigo" width=150px>
                 </div>
                 <div class="card-body">
-                <h5 class="card-title"><b>Manuel Rodrigo</b></h5>
-                <p class="card-text">New Yorker here! I'm doing some quarantine-cooking, so if you
-                   got recipes for a mean New-York pizza (sorry Chicago), hit me up :D</p>
-                <a href="#" class="btn btn-primary" style="margin-top:15px">Connect</a>
-                <a href="#" class="btn btn-primary" style="margin-top:15px; float:right">Dismiss</a>
+                    <h5 class="card-title"><b>Manuel Rodrigo</b></h5>
+                    <p class="card-text">New Yorker here! I'm doing some quarantine-cooking, so if you
+                     got recipes for a mean New-York pizza (sorry Chicago), hit me up :D</p>
                 </div>
-            </div>
+                <a href="#" class="btn-primary">Connect</a>
+                <a href="#" class="btn-primary">Dismiss</a>
+                </div>
             </div>
             <div class="col-md-4">
             <div class="card">
@@ -52,12 +66,12 @@
                 <img src="/images/girl.png" class="card-img-top" alt="Miranda Lottie" width=150px>
                 </div>
                 <div class="card-body">
-                <h5 class="card-title"><b>Miranda Lottie</b></h5>
-                <p class="card-text">From my GBBO binging, I've become a somewhat of a star baker myself!
-                  I'd love to connect with fellow bakers to learn more tips to avoid soggy bottoms :)</p>
-                <a href="#" class="btn btn-primary" style="margin-top:15px">Connect</a>
-                <a href="#" class="btn btn-primary" style="margin-top:15px; float:right">Dismiss</a>
+                  <h5 class="card-title"><b>Miranda Lottie</b></h5>
+                  <p class="card-text">From my GBBO binging, I've become a somewhat of a star baker myself!
+                    I'd love to connect with fellow bakers to learn more tips to avoid soggy bottoms :)</p>
                 </div>
+                <a href="#" class="btn-primary">Connect</a>
+                <a href="#" class="btn-primary">Dismiss</a>
             </div>
             </div>
             <div class="col-md-4">
@@ -69,9 +83,9 @@
                 <h5 class="card-title"><b>Joshua Lin</b></h5>
                 <p class="card-text">Growing up in America, I've always wanted to learn more about my Vietnamese roots through our food.
                 If you're also passionate about Vietnamese cooking, let's connect!</p>
-                <a href="#" class="btn btn-primary" style="margin-top:15px">Connect</a>
-                <a href="#" class="btn btn-primary" style="margin-top:15px; float: right">Dismiss</a>
                 </div>
+                <a href="#" class="btn-primary">Connect</a>
+                <a href="#" class="btn-primary">Dismiss</a>
             </div>
             </div>
         </div>
@@ -79,6 +93,8 @@
     </div>
 
 </div>
+
+
 </body>
 
 <%- include('footer'); -%>

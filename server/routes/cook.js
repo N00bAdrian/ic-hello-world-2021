@@ -26,7 +26,7 @@ router.get('/start', (req, res, next) => {
 router.post('/start', (req, res) => {
     const {recipe, description, category} = req.body;
 
-    console.log(recipe+description+category);
+    //console.log(recipe+description+category);
 
     db.run(`INSERT INTO posts(username, recipe, description, category, active) VALUES(?,?,?,?,1)`, [req.session.username, recipe, description, category], (err) => {
         if (err) {
@@ -51,16 +51,33 @@ router.get('/session/:rid', (req, res, next) => {
             return console.error(err.message);
         }
         if (row) {
-            res.render('session', {
-                rid: rid,
-                title: 'Session ' + rid,
-                name: row.username,
-                recipe: row.recipe,
-                description: row.description,
-                category: row.category
+            db.all(`SELECT * FROM comments WHERE postid = ?`, [rid], (err, rows) => {
+                res.render('session', {
+                    rid: rid,
+                    title: 'Session ' + rid,
+                    name: row.username,
+                    recipe: row.recipe,
+                    description: row.description,
+                    category: row.category,
+                    active: row.active,
+                    rows: rows
+                });
             });
+        } else {
+            res.redirect('/cook/message');
         }
     });    
+});
+
+router.post('/session/:postid', (req, res) => {
+    var postid = parseInt(req.params.postid);
+    var {comment} = req.body;
+    db.run(`INSERT INTO comments(username, postid, comment) VALUES(?, ?, ?)`, [req.session.username, postid, comment], (err) => {
+        if (err) {
+            console.error(err.message);
+        }
+    });
+    res.redirect(`/cook/session/${postid}`);
 });
 
 router.get('/end/:rid', (req, res) => {

@@ -94,6 +94,13 @@ router.get('/end/:rid', (req, res) => {
 });
 
 router.get('/message', (req, res) => {
+    if (typeof req.session.username == 'undefined') {
+        return res.render('signin', {
+            Title: 'Sign in',
+            message: 'Sign in required',
+            messageClass: 'alert-danger'
+        });
+    }
     db.all(`SELECT * FROM posts WHERE active=1 AND (username = ? OR category IN (`+ req.session.preferences.map(() => '?').join(',') +`))`, [req.session.username].concat(req.session.preferences), (err, rows) => {
         if (err) {
             return console.error(err.message);

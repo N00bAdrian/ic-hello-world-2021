@@ -163,8 +163,9 @@
     </div>
     
     <!--Navigation bar-->
-    <nav>
-        <ul>
+
+    <ul>
+        <nav>
             <div class="topnav">
                 <li: style="float:left"><a class="active" href="/">Home</a></li:>
                 <li: style="float:left"><a href="/connect">Connect</a></li:>
@@ -177,8 +178,9 @@
                     class="btn-border-primary" href="/signin">Sign in</a></li:>
                 <% } %>
             </div>
-        </ul>
-    </nav>        
+        </nav>   
+    </ul>
+     
 
     <% if (typeof message !='undefined' ) { %>
         <div class="alert <%= messageClass %> " role="alert">

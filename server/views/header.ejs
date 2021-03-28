@@ -58,6 +58,7 @@
         .topnav {
             overflow: hidden;
             background-color: #fff59d;
+            border-radius: 10px;
         }
 
         .topnav a {
@@ -68,16 +69,18 @@
             padding: 14px 16px;
             text-decoration: none;
             font-size: 17px;
+            border-radius: 10px;
         }
 
         .topnav a:hover {
             background-color: #fdd835;
             color: black;
+            border-radius: 10px;
         }
 
         .topnav a.active {
-            background-color: #ffc107;
-            color: white;
+            color:royalblue;
+            border-radius: 10px;
         }
 
         .topnav .search-container {
@@ -171,7 +174,7 @@
               <li: style="float:left"><a class="active" href="#home">Home</a></li:>
               <li: style="float:left"><a href="/connect">Connect</a></li:>
               <li: style="float:left"><a href="#contact">Message</a></li:>
-              <li: style="float:left"><a href="#about">About</a></li:>
+              <li: style="float:left"><a href="/about">About</a></li:>
               <% if(typeof username != 'undefined') {%>
                 <li: style="float:right"><a class="btn-danger" href="/signout">Sign out</a></li:>  
               <% } else { %>

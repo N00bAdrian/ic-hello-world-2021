@@ -101,21 +101,6 @@
             border: none;
         }
 
-        /* .topnav .search-container button {
-            float: right;
-            padding: 6px;
-            margin-top: 8px;
-            margin-right: 16px;
-            background: #ff7043;
-            font-size: 17px;
-            border: none;
-            cursor: pointer;
-        }
-
-        .topnav .search-container button:hover {
-            background: #ff7043;
-        } */
-
         @media screen and (max-width: 600px) {
             .topnav .search-container {
                 float: none;
@@ -154,7 +139,6 @@
         .btn-primary {
             background-color: transparent;
             color:black;
-            border: 2px solid black;
             padding: .5rem 1rem;
             cursor: pointer;
             border-radius: .25rem;
@@ -199,8 +183,8 @@
                     <li: style="float:right"><a href="/profile">Profile</a></li:>
                     <li: style="float:right"><a href="/cook/start">Cook</a></li:>
                 <% } else { %>
-                    <li: style="float:right"><a class="btn-primary" href="/signup">Sign up</a><a
-                    class="btn-border-primary" href="/signin">Sign in</a></li:>
+                    <li: style="float:right"><a href="/signup">Sign up</a></li:>
+                    <li: style="float:right"><a href="/signin">Sign in</a></li:>
                 <% } %>
             </div>
         </nav>   

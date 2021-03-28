@@ -14,7 +14,8 @@ let db = new sqlite3.Database('../database.db', (err) => {
 db.run(`CREATE TABLE IF NOT EXISTS users(
     rid INTEGER PRIMARY KEY AUTOINCREMENT,
     username TEXT NOT NULL,
-    password TEXT NOT NULL
+    password TEXT NOT NULL,
+    preferences TEXT NOT NULL
 )`);
 
 const getHashedPassword = (password) => {
@@ -30,7 +31,9 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res) => {
-    const {name, password, password2} = req.body;
+    const {name, password, password2, preferences} = req.body;
+
+    //console.log(preferences.toString());
 
     if (password != password2) {
         res.render('signup', {
@@ -45,7 +48,7 @@ router.post('/', (req, res) => {
             return console.error(err.message);
         }
 
-        console.log(row);
+        //console.log(row);
 
         if (row) {
             res.render('signup', {
@@ -54,9 +57,9 @@ router.post('/', (req, res) => {
                 messageClass: 'alert-danger'
             });
         } else {
-            console.log(name, password);
+            //console.log(name, password);
             var hash = getHashedPassword(password);
-            db.run(`INSERT INTO users(username, password) VALUES(?, ?)`, [name, hash], (err) => {
+            db.run(`INSERT INTO users(username, password, preferences) VALUES(?, ?, ?)`, [name, hash, preferences.toString()], (err) => {
                 if (err) {
                     return console.log(err.message);
                 }

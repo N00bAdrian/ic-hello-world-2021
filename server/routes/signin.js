@@ -37,6 +37,7 @@ router.post('/', (req, res) => {
       if (row.password == hash) {
         var sess = req.session;
         sess.username = name;
+        sess.preferences = row.preferences.split(',');
         res.redirect('/profile'); 
       } else {
         res.render('signin', {

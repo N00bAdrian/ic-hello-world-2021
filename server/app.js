@@ -28,6 +28,7 @@ app.use(session({secret:'secret',saveUninitialized: true,resave: true}));
 
 app.use((req, res, next) => {
   res.locals.username = req.session.username;
+  res.locals.preferences = req.session.preferences;
   next();
 });
 

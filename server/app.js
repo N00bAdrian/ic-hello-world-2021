@@ -14,6 +14,8 @@ var signinRouter = require('./routes/signin');
 var signupRouter = require('./routes/signup');
 var profileRouter = require('./routes/profile');
 var singoutRouter = require('./routes/signout');
+var updatepreferencesRouter = require('./routes/updatepreferences');
+var updatepasswordRouter = require('./routes/updatepassword');
 var cookRouter = require('./routes/cook');
 
 var app = express();
@@ -21,6 +23,9 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
+io.on('connection', () => {
+  console.log('A user has connected');
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -49,6 +54,9 @@ app.use('/signin', signinRouter);
 app.use('/signup', signupRouter);
 app.use('/profile', profileRouter);
 app.use('/signout', singoutRouter);
+app.use('/updatepreferences', updatepreferencesRouter);
+app.use('/updatepassword', updatepasswordRouter);
+
 app.use('/cook', cookRouter);
 
 // catch 404 and forward to error handler

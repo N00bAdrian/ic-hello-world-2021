@@ -19,6 +19,19 @@
     .card-body {
         width:100%;
     }
+    .btn-primary {
+        background-color: transparent;
+        color:black;
+        border: 2px solid black;
+        padding: .5rem 1rem;
+        cursor: pointer;
+        border-radius: .25rem;
+        position:sticky;
+        margin: 30px auto;
+    }
+    .card-text{
+        margin: 30px auto;
+    }
 </style>
 
 <div class="container">
@@ -73,8 +86,13 @@
                         </div>
                         <div class="col-md-5">
                             <p class="card-text">Let's get you started and you will be yum yum yum in minutes!</p>
+                            <% if(typeof username != 'undefined') {%>
+                                <p class="card-text">You're already logged in.</p>
+                            <% } else { %>
+                                <a class="btn-primary" href="/signup">Sign up</a>
+                                <a class="btn-primary" href="/signin">Sign in</a>
+                            <% } %>
                         </div>
-                        <a href="#" class="btn-primary">Get started now!</a>
                     </div>
                 </div>
             </div>

@@ -9,7 +9,11 @@ router.get('/', (req, res, next) => {
             preferences: req.session.preferences
         });
     } else {
-        res.redirect('/signin');
+        res.render('signin', {
+            title: 'Sign in',
+            message: 'Log in required',
+            messageClass: 'alert-danger'
+        });
     }
 });
 

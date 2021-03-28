@@ -3,20 +3,18 @@
 
 <head>
 
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-   <link rel="preconnect" href="https://fonts.gstatic.com">
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-   <style>
-
-
-       .fakeimg {
-         height: 200px;
-         background: #aaa;
-       }
+    <style>
+        .fakeimg {
+            height: 200px;
+            background: #aaa;
+        }
 
         * {
             box-sizing: border-box;
@@ -49,7 +47,7 @@
         }
 
         p {
-          font-family: Tahoma, Helvetica, sans-serif;
+            font-family: Tahoma, Helvetica, sans-serif;
         }
 
         h1 {
@@ -58,7 +56,7 @@
         }
 
         h5 {
-          font-size: 20px;
+            font-size: 20px;
         }
 
         .topnav {
@@ -80,6 +78,10 @@
 
         .topnav a:hover {
             background-color: #fdd835;
+        }
+
+        .topnav .active {
+            background-color: #ffc107;
             color: black;
             border-radius: 10px;
         }
@@ -139,18 +141,26 @@
         .card {
           margin: 10px;
           padding: 20px;
-          background-color: #fffde7;
+          background-color: #fffee7;
         }
 
         .container-fluid {
-          background-color: #ffca28;
+            background-color: #ffca28;
         }
 
         .friend-img {
-          text-align: center;
-          background-color: #eceff1
+            text-align: center;
+            background-color: #eceff1
         }
-
+        .btn-primary {
+            background-color: transparent;
+            color:black;
+            border: 2px solid black;
+            padding: .5rem 1rem;
+            cursor: pointer;
+            border-radius: .25rem;
+            position:sticky;
+        }
     </style>
 </head>
 
@@ -173,8 +183,9 @@
       <p style="font-size: 18px; ">cook, craft & connect</p>
       <br>
     </div>
-
+    
     <!--Navigation bar-->
+
     <ul>
         <nav>
             <div class="topnav">
@@ -194,16 +205,16 @@
             </div>
         </nav>   
     </ul>
+     
 
-   <% if (typeof message != 'undefined') { %>
+    <% if (typeof message !='undefined' ) { %>
         <div class="alert <%= messageClass %> " role="alert">
             <%= message %>
         </div>
     <% } %>
 
-
-    <!-- Search bar for people, add later if have time -->
-    <!-- <h1>
+            <!-- Search bar for people, add later if have time -->
+            <!-- <h1>
         <div class="search-container">
             <form action="/action_page.php">
                 <input type="text" placeholder="Search" name="search">
@@ -212,4 +223,4 @@
         </div>
     </h1> -->
 
-    <!-- Code from other files below -->
+            <!-- Code from other files below -->
